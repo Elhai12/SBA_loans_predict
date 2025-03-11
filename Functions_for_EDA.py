@@ -13,6 +13,16 @@ def percent_paid_not_paid(df_for_eda,col_groups):
     df_concat = df_concat.sort_index(ascending=False)
     return df_concat
 
+
+def highlight_max_in_columns(df, columns_to_highlight, color='red'):
+    def highlight_max(series):
+        is_max = series == series.max()
+        return ['background-color: {}'.format(color) if v else '' for v in is_max]
+
+    styled_df = df.style.apply(highlight_max, subset=columns_to_highlight, axis=0)
+    return styled_df
+    
+
 # def plotly_lines(df_concat):
 # #Function to create compare lines of paid and not paid percentage
 #     fig = px.line(
