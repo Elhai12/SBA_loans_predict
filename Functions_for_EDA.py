@@ -13,19 +13,19 @@ def percent_paid_not_paid(df_for_eda,col_groups):
     df_concat = df_concat.sort_index(ascending=False)
     return df_concat
 
-def plotly_lines(df_concat):
-#Function to create compare lines of paid and not paid percentage
-    fig = px.line(
-        df_concat,
-        x=df_concat.index,
-        y=['unpaid_perc', 'paid_perc'],
-        labels={'value': 'Percentage', 'variable': 'Metric'},
-        title='Unpaid Percentage and Paid Percentage Over Time'
-    )
+# def plotly_lines(df_concat):
+# #Function to create compare lines of paid and not paid percentage
+#     fig = px.line(
+#         df_concat,
+#         x=df_concat.index,
+#         y=['unpaid_perc', 'paid_perc'],
+#         labels={'value': 'Percentage', 'variable': 'Metric'},
+#         title='Unpaid Percentage and Paid Percentage Over Time'
+#     )
 
-    fig.update_layout(
-        xaxis_title="Approve year loan",
-        yaxis_title="Percentage (%)",
-        legend_title="Paid/Unpaid"
-    )
-    return fig
+#     fig.update_layout(
+#         xaxis_title="Approve year loan",
+#         yaxis_title="Percentage (%)",
+#         legend_title="Paid/Unpaid"
+#     )
+#     return fig
